@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["username"])){
-    header("location:http://localhost/project/login.php");
+    header("location:http://localhost/gprojectg/login.php");
 }else{
     ?>
     <!DOCTYPE html>
@@ -19,7 +19,7 @@ if(!isset($_SESSION["username"])){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center" id="header">
-                   <h1> Parking Lot Management System</h1>
+                   <h1>Vehicle Administration & Theft Control</h1>
                    <ul>
                        <li><a href="index.php">Home</a></li>
                        <li><a href="record.php">All Records</a></li>

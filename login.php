@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <h1>Parking Lot Management System </h1>
+    <h1>Vehicle Administration & Theft Control</h1>
     <div class="form">
         <div class="login-form">
             <h1>Login Admin Form</h1>

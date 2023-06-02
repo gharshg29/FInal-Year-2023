@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["username"])){
-    header("location:http://localhost/project/login.php");
+    header("location:http://localhost/gprojectg/login.php");
 }else{
     ?>
       <!DOCTYPE html>

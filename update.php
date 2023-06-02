@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center" id="header">
-                   <h1> Parking Lot Management System</h1>
+                   <h1>Vehicle Administration & Theft Control</h1>
                   
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 </div>
                
                 <div class="col-md-6">
-                    <img src="images/car.png" class="car" style="width: 650px; height: 250px; margin-top: 200px;" alt="car picture">
+                    <!-- <img src="images/car.png" class="car" style="width: 650px; height: 250px; margin-top: 200px;" alt="car picture"> -->
                 </div>
             </div>
         </div> 

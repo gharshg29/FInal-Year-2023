@@ -1,8 +1,31 @@
 <?php
 session_start();
 if(!isset($_SESSION["username"])){
-    header("location:http://localhost/project/login.php");
-}else{
+    header("location:http://localhost/gprojectg/login.php");
+}else{if (isset($_POST['tcmButton'])) {
+    // Execute the Python file
+    exec('start cmd');
+
+    // Check the return value of the command
+    if ($return === 0) {
+        echo '<p class="text-success">Python script executed successfully.</p>';
+        // Process any output if required
+    } else {
+        echo '<p class="text-danger">An error occurred while executing the Python script.</p>';
+        // Handle the error
+    }}
+    if(isset($_POST['tcm_button'])){
+        // Generate a random token
+        $token = bin2hex(random_bytes(4));
+
+    
+    
+        // Execute the Python script
+        $output = shell_exec('start cmd');
+        echo "<script>alert('Token: $token');</script>";
+    
+        // Display the token in a popup
+    }
     ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +43,7 @@ if(!isset($_SESSION["username"])){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center" id="header">
-                   <h1> Parking Lot Management System</h1>
+                   <h1>Vehicle Administration & Theft Control</h1>
                    <ul>
                        <li><a href="index.php">Home</a></li>
                        <li><a href="record.php">All Records</a></li>
@@ -59,6 +82,7 @@ if(!isset($_SESSION["username"])){
                         </div>
                         <input type="datetime-local" name="entry_date" class="form-control">
                     </div>
+                    
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Token Number:</span>
@@ -66,8 +90,15 @@ if(!isset($_SESSION["username"])){
                         <input type="number" name="Token" class="form-control">
                     </div>
                    <input type="submit" class="btn btn-primary my-3">
+                   <form action="" method="post">
+            <input type="submit" class="btn btn-primary my-3" name="tcmButton" value="TCM">
+        </form>
                    </form>
+                   <form method="post">
+        <input type="submit" name="tcm_button" class="btn btn-secondary my-3" value="Capture Image">
+    </form>
                 </div>
+                
                 <div class="col-md-6">                                 
                     <?php 
                      $conn = Mysqli_connect("localhost", "root", "", "parking_project") or die("conection failed!");
@@ -90,7 +121,7 @@ if(!isset($_SESSION["username"])){
                             }
                         ?>
                     </div>
-                    <img src="images/car.png" class="car" style="width: 650px; height: 250px; margin-top: 100px;" alt="car picture">
+                    <!-- <img src="images/car.png" class="car" style="width: 650px; height: 250px; margin-top: 100px;" alt="car picture"> -->
                     
                 </div>
             </div>
@@ -177,6 +208,7 @@ if(!isset($_SESSION["username"])){
 </body>
 </html>
 
-  <?php  
+  <?php 
+  
 }
 ?>

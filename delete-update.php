@@ -5,6 +5,6 @@
     $conn = Mysqli_connect("localhost", "root", "", "parking_update_info") or die("conection failed!");
     $sql = "DELETE FROM update_info where Entry_date = '{$Entry_date}'";
     $result = mysqli_query($conn, $sql) or die("query Failed");
-    header("location: http://localhost/project/record.php");
+    header("location: http://localhost/gprojectg/record.php");
     mysqli_close($conn);
 ?>
